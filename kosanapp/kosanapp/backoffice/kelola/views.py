@@ -3,9 +3,11 @@ from kosanapp.apps.kelola.models import query_kosan
 from kosanapp.backoffice.kelola.forms import KelolaForm
 from django.contrib import messages
 
+
 def index(request):
     data = query_kosan.objects.all()
     return render(request, 'backoffice/kelola/index.html', {"datas": data})
+
 
 def add(request):
     form = KelolaForm(data=request.POST or None)
@@ -17,7 +19,8 @@ def add(request):
         return redirect('backoffice:kelola:index')
     return render(request, 'add.html', context_data)
 
-def edit(request,id):
+
+def edit(request, id):
     kosan = query_kosan.objects.get(id=id)
     form = KelolaForm(data=request.POST or None, instance=kosan)
 
@@ -32,7 +35,8 @@ def edit(request,id):
 
     return render(request, 'add.html', context_data)
 
-def delete(request,id):
+
+def delete(request, id):
     query = query_kosan.objects.get(id=id)
     query.delete()
     messages.success(request, "Data Berhasil Dihapus")

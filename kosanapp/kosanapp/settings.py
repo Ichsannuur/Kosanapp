@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'kosanapp.apps.kelola',
+    'kosanapp.apps.fasilitas'
 ]
 
 MIDDLEWARE = [
