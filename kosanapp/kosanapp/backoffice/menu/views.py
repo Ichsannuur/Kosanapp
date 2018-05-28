@@ -7,4 +7,4 @@ def home(request):
 	context_data = {
 		"count" : count
 	}
-	return render(request,'backoffice/menu/index.html', context_data)
+	return render(request,'base.html', context_data)

@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'kosanapp.apps.kelola',
-    'kosanapp.apps.fasilitas'
 ]
 
 MIDDLEWARE = [
@@ -82,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'kosandb',
         'USER': 'postgres',
-        'PASSWORD': 'jakmania1928',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '',
     }
