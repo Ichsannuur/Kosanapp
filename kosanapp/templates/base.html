@@ -1,0 +1,84 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu Admin Kosan</title>
+
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/styleBD.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/dataTables.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/jquery/jquery-ui.min.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'font/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css"/>
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="{% url 'backoffice:menu:home' %}" class="logo">
+                <b>Kosan App Admin</b>
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="fa fa-bars"></span>
+                </a>
+                <section class="header-title">
+                    <h1>{% block title_content %}{% endblock %} </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="{% url 'backoffice:menu:home' %}"><i class="fa fa-home"></i> Home</a></li>
+                        <li class="active"><a href="{% url 'backoffice:logout' %}">Logout</a></li>
+                    </ol>
+                </section>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li  class="{% if current_page == 'dashboard' %} active {% endif %}">
+                        <a href="{% url 'backoffice:menu:home' %}"><i class="fa fa-home"></i> <span>Dashboard</span></a>
+                    </li>
+                    <li  class="{% if current_page == 'dashboard' %} active {% endif %}">
+                        <a href="{% url 'backoffice:kelola:index' %}"><i class="fa fa-edit"></i> <span>Kelola</span></a>
+                    </li>
+                </ul>    
+            </div>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content">
+                {% if messages %}
+                    {% for message in messages %}
+                        <span class="label label-{% if message.tags %}{{ message.tags }}{% endif %} m-r-15 col-md-12 error-messages">{{ message|safe }}</span>
+                    {% endfor %}
+                {% endif %}
+                {% block content %}{% endblock %}
+            </section>
+        </div>
+    </div>
+    <script src="{% static 'js/jquery/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'js/jquery/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/frame.js' %}"></script>
+    <script src="{% static 'js/typeahead/bloodhound.js' %}"></script>
+    <script src="{% static 'js/typeahead/typeahead.jquery.js' %}"></script>
+    <script src="{% static 'js/dataTables.min.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+
+            "use strict"; // Start of use strict
+
+            $('#datatable').DataTable({
+                "dom": "<'row'<'col-sm-6'l><'col-sm-6'f>>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
+                "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+                "iDisplayLength": 10
+            });
+        });
+    </script>
+    {% block extra_javascript %}{% endblock %}
+    {% block javascript %}{% endblock %}
+</body>
+</html>

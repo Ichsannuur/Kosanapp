@@ -1,0 +1,208 @@
+.icon-tab {
+    position: absolute;
+    width: 70px;
+    margin-top: 17px;
+    right: 0;
+}
+
+input[type="text"],input[type="number"],input[type="password"], textarea, select {
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #e4e5e7;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+}
+
+textarea {
+    height: 100px;
+}
+
+select {
+    padding: 0 9px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus,
+input[type="password"]:focus, textarea:focus, select:focus{
+    border: 1px #318d01 solid;
+    outline: none;
+}
+
+.view-header .header-icon {
+    margin-top: -6px;
+    font-size: 65px;
+}
+
+.table-v2 th, .table-v2 td{
+    padding-bottom: 10px;
+}
+
+.table-v2 th {
+    width: 125px;
+    vertical-align: top;
+}
+
+.table-v2 td.colon {
+    vertical-align: top;
+    width: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.tab-content .panel-body {
+    border: none;
+}
+
+ /* Detail */
+.detail section {
+    margin-bottom: 10px;
+}
+
+.detail section h1.title {
+    margin: 0;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #37a000;
+}
+
+.detail .toolbar {
+    margin-bottom: 25px;
+}
+
+/* Error List */
+ul.errorlist {
+    list-style: none;
+    padding: 0;
+    color: red;
+}
+
+.pagination {
+    margin-left:40%;
+}
+
+.number_pages {
+    margin-top: -10px;
+    padding: 10px 0 10px 0;
+    font-size: 20px;
+}
+
+.header-title {
+    margin-top: -2px;
+    margin-left: 80px;
+}
+
+.header-title h1 {
+    font-size: 24px;
+}
+
+.header-title .breadcrumb {
+    padding: 8px;
+    bottom: 13px;
+}
+
+.content {
+    margin-top: 10px;
+}
+
+.error-messages {
+    border-radius: 0;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+    .content {
+        margin-top: 40px;
+    }
+
+    .main-header .sidebar-toggle {
+        padding: 35px 14px;
+    }
+
+    .header-title {
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+    .main-header .sidebar-toggle {
+        padding: 34px 14px;
+    }
+
+    .header-title {
+        margin-right: 30px;
+    }
+}
+
+table thead tr{
+    text-transform: uppercase;
+    border-bottom: 3px solid #E4E5E7;
+}
+
+.accordion-content input, .accordion-content select {
+    margin-bottom: 5px;
+}
+
+.accordion-content input[type="checkbox"] {
+    margin-bottom: 15px;
+}
+
+.is_late_list {
+    background-color: orange;
+}
+
+.body-form ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.body-form ul li label{
+  font-weight: normal;
+}
+
+.blue {
+    color: #05C956;
+}
+
+.red {
+    color: #E5343D;
+}
+
+.list {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #bfbfbf;
+    border-top: 1px solid #e6e6e6;
+    background: #f2f2f2;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+}
+
+.list:last-child {
+    padding-bottom: 8px;
+}
+
+.list:hover, .tt-cursor {
+    cursor: pointer;
+    background-color: #37A000;
+    border-color: #37A000;
+    color: #FFF;
+}
+
+.tt-menu {
+    width: 100%;
+}
+
+.twitter-typeahead {
+    display: block!important;
+}
+
+.sidebar-menu > li:last-child {
+    margin-bottom: 25px;
+}
